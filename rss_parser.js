@@ -40,6 +40,8 @@ function parseContents(){
         }
         else{
             parser.parseString(body, function(err, result) {
+                //length check
+                console.log("Number of Items : ", result['rss']['channel'][0]['item'].length);
                 result['rss']['channel'][0]['item'].forEach(function (item) {
                     var $ = cheerio.load(item['description'][0]);
                     var excerpt = "";
@@ -56,9 +58,25 @@ function parseContents(){
                         });
                     console.log("Excerpt : ", excerpt);
 
-            //        console.log(item['description']);                                     // description field (To Do : parse and extract image)
+                    //console.log(item['description']);                                     // description field (To Do : parse and extract image)
                     console.log("Category : ", item['category'][0]);                        // category field
                     console.log("Date : ", item['pubDate'][0]);                             // pubDate field
+
+                    // DB Insertion
+                    var article = new Article({
+                        Title:      item['title'][0],
+                        Link:       item['link'][0],
+                        ImageLink:  $("IMG").attr('src'),
+                        Excerpt:    excerpt,
+                        Category:   item['category'][0],
+                        Date:       item['pubDate'][0]
+                    });
+                    article.save(function (err){
+                        if(err){
+                            console.log("DB Insertion Error");
+                            throw err;
+                        }
+                    });
                 });
             });
         }

@@ -1,7 +1,7 @@
 Parser
-    - Sites file (multiple parser modules for different sites)
-    - Basic RSS Parsing : Done
-    - DB Insertion
+    - Sites file : multiple parser modules for different sites
+    - (Basic RSS Parsing - Done)
+    - DB Insertion : (Basic - Done) / Duplication Detection - Needs to be done
     - Read from Article DB and check for updates
 
 Article DB
