@@ -1,0 +1,12 @@
+Parser
+    - Sites file (multiple parser modules for different sites)
+    - Basic RSS Parsing : Done
+    - DB Insertion
+    - Read from Article DB and check for updates
+
+Article DB
+    - DB Connection Check
+
+WordPress PlugIn
+    - Read from Article DB and check for updates
+    - Insertion to the WP DB

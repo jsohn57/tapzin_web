@@ -1,5 +1,5 @@
 /**
- * Created by junghoon on 2014. 3. 24..
+ * Created by junghoon on 2014. 3. 24
  */
 var request = require('request'),                           // to send the HTTP GET request to the rss server
     xml2js = require('xml2js'),                             // XML Parser (RSS is in XML Format)

@@ -1,0 +1,13 @@
+/**
+ * Created by junghoon on 2014.06.07
+ */
+
+ How to install
+ - NodeJS Install (http://nodejs.org/download/)
+    - Using NPM :
+        . Install {request, xml2js, cheerio, mongoose} modules
+ - MongoDB Install (http://www.mongodb.org/downloads)
+
+ How to run
+ - Run Mongodb(mongod --dbpath ./data/tapzindb)
+ - Run Parser(nodejs rss_parser.js)
